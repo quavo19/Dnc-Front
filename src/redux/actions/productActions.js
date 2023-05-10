@@ -12,7 +12,7 @@ import {
 } from "../slices/products";
 export const Search = (value) => async (dispatch) => {
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const words = value.trim().toLowerCase().split(/\s+/);
     const pattern = `^(?=.*${words.join(")(?=.*")}).*$`;
     const regex = new RegExp(pattern, "i");
@@ -35,7 +35,7 @@ export const Search = (value) => async (dispatch) => {
 export const getProducts = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
 
     dispatch(setProducts(data));
   } catch (error) {
@@ -54,7 +54,7 @@ export const getProducts = () => async (dispatch) => {
 export const getElectronics = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const Electronics = data.filter((element) => {
       return element.name === "mac book";
     });
@@ -76,7 +76,7 @@ export const getElectronics = () => async (dispatch) => {
 export const getCloths = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const cloths = data.filter((element) => {
       return element.category === "cloths";
     });
@@ -97,7 +97,7 @@ export const getCloths = () => async (dispatch) => {
 export const getMen = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const men = data.filter((element) => {
       return element.brand === "apple";
     });
@@ -119,7 +119,7 @@ export const getMen = () => async (dispatch) => {
 export const getwomen = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const men = data.filter((element) => {
       return element.brand === "women";
     });
@@ -140,7 +140,7 @@ export const getwomen = () => async (dispatch) => {
 export const getHomeAppliances = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const men = data.filter((element) => {
       return element.brand === "homeappliances";
     });
@@ -161,7 +161,7 @@ export const getHomeAppliances = () => async (dispatch) => {
 export const getHotSale = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get("https://deyarah-api.onrender.com/api/products/api/products");
     const men = data.filter((element) => {
       return element.brand === "hotsale";
     });
@@ -183,7 +183,7 @@ export const getHotSale = () => async (dispatch) => {
 export const getProduct = (id) => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`https://deyarah-api.onrender.com/api/products/api/products/${id}`);
     dispatch(setProduct(data));
   } catch (error) {
     dispatch(
@@ -213,7 +213,7 @@ export const createProductReview =
         },
       };
       const { data } = await axios.post(
-        `/api/products/reviews/${productId}`,
+        `https://deyarah-api.onrender.com/api/products/api/products/reviews/${productId}`,
         { comment, userId, rating, title },
         config
       );
