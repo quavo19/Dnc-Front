@@ -37,7 +37,9 @@ code {
 a:hover {
   color: #93b4d3 !important;
 }
-
+.css-1nam2jh:hover {
+  background: #0062be !important;
+}
 .pepsi {
   animation: breathing 2s ease-in-out infinite;
 }
@@ -1173,6 +1175,10 @@ a:link {
 @media only screen and (max-width: 700px) {
   .content {
     flex-direction: column;
+  }
+
+  .css-84zodg {
+    display: none !important;
   }
 
   .search-cont {
