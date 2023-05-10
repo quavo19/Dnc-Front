@@ -10,7 +10,7 @@ const OrderSuccessScreen = () => {
   const logoutHandler = () => {
     dispatch(logout());
     toast({ description: 'You have been logged out.', status: 'success', isClosable: true });
-    navigate('/products');
+    navigate('/');
   };
   return (
     <Wrap justify='center' direction='column' align='center' mt='20px' minH='100vh'>
@@ -32,7 +32,7 @@ const OrderSuccessScreen = () => {
             Your Order
           </Button>
           <Button colorScheme='teal' variant='outline' as={ReactLink} to='/'>
-            Products
+            Home
           </Button>
           <Button colorScheme='teal' variant='outline' onClick={logoutHandler}>
             Logout
