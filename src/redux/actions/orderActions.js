@@ -23,7 +23,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         'Content-Type': 'application/json',
       },
     };
-    const { data } = await axios.post('https://deyarah-api.onrender.com/api/orders', preparedOrder, config);
+    const { data } = await axios.post("https://deyarah-api.onrender.com/api/orders", preparedOrder, config);
   } catch (error) {
     dispatch(
       setError(
