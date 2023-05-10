@@ -29,7 +29,7 @@ const RegistrationScreen = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const { loading, error, userInfo } = user;
-  const redirect = '/products';
+  const redirect = '/';
   const toast = useToast();
   const headingBR = useBreakpointValue({ base: 'xs', md: 'sm' });
   const boxBR = useBreakpointValue({ base: 'transparent', md: 'bg-surface' });
@@ -66,7 +66,7 @@ const RegistrationScreen = () => {
                 <Heading size={headingBR}>Create an account.</Heading>
                 <HStack spacing='1' justify='center'>
                   <Text color='muted'>Already a user? </Text>
-                  <Button as={ReactLink} to='/registration' variant='link' colorScheme='orange'>
+                  <Button as={ReactLink} to='/login' variant='link' colorScheme='orange'>
                     Sign in
                   </Button>
                 </HStack>
