@@ -44,6 +44,22 @@ a:hover {
   animation: breathing 2s ease-in-out infinite;
 }
 
+p {
+  margin-bottom: 0 !important;
+}
+
+.css-n9dnnx {
+  height: 20px;
+}
+
+.css-gg4vpm {
+  height: 18px;
+}
+
+.css-2cpoym {
+  padding: 0 !important;
+}
+
 @keyframes breathing {
   0% {
     transform: scale(1);
@@ -1002,6 +1018,7 @@ a:link {
   font-size: 15px;
   font-weight: 600;
   display: flex;
+  margin-bottom: 0;
   color: green;
   align-items: center;
 }
