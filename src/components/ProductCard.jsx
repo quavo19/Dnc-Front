@@ -76,9 +76,9 @@ const ProductCard = ({ product }) => {
       </Box>
       <Flex mt='1' justifyContent='space-between' alignContent='center'>
         <Link as={ReactLink} to={`/product/${product._id}`} pt='2' cursor='pointer'>
-          <h4 className='Product-name'>
+          <p className='Product-name'>
             {product.name}
-          </h4>
+          </p>
         </Link>
       </Flex>
       

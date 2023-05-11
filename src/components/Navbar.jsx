@@ -139,7 +139,7 @@ const Navbar = () => {
                   <MdLocalShipping />
                   <Text ml="2">Your Orders</Text>
                 </MenuItem>
-                {userInfo.isAdmin === "true" && (
+                {userInfo.isAdmin === "false" && (
                   <>
                     <MenuDivider />
                     <MenuItem as={ReactLink} to={"/admin-console"}>

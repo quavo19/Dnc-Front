@@ -969,6 +969,7 @@ a:link {
 .product-flex {
   display: flex;
   justify-content: center;
+  width: 100vw !important;
   flex-wrap: wrap;
   margin: 20px 0;
   background-color: rgb(120, 120, 120, 0.01);
@@ -1173,6 +1174,9 @@ a:link {
 }
 
 @media only screen and (max-width: 700px) {
+  .product-item {
+    width: 40%;
+  }
   .content {
     flex-direction: column;
   }
