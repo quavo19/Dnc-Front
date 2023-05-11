@@ -374,7 +374,10 @@ a {
 /* home wrapper 2 ends */
 
 /* categories section */
-
+.product-name {
+  font-size: 16px;
+  font-weight: 400;
+}
 
 .categories>div {
   width: 25%;
@@ -968,6 +971,7 @@ a:link {
 
 .product-flex {
   display: flex;
+  border: 2px solid;
   justify-content: center;
   width: 100vw !important;
   flex-wrap: wrap;
