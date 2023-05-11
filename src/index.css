@@ -965,10 +965,6 @@ a:link {
   font-weight: 600;
 }
 
-.progress {
-  height: 6px;
-}
-
 .product-flex {
   display: flex;
   border: 2px solid;
@@ -1012,6 +1008,7 @@ a:link {
 
 .product-flex li {
   max-width: 200px;
+  border: 2px solid;
   width: 45%;
   background-color: #fff;
   box-shadow: 0 0 10px #0000001a;
