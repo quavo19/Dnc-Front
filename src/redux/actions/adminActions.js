@@ -133,7 +133,7 @@ export const setDelivered = (id) => async (dispatch, getState) => {
         'Content-Type': 'application/json',
       },
     };
-    await axios.put(`https://deyarah-api.onrender.comapi/orders/${id}`, {}, config);
+    await axios.put(`https://deyarah-api.onrender.com/api/orders/${id}`, {}, config);
     dispatch(setDeliveredFlag());
   } catch (error) {
     dispatch(
