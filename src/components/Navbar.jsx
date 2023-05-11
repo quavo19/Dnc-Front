@@ -3,21 +3,14 @@ import {
   Flex,
   HStack,
   Link,
-  IconButton,
   Icon,
   Text,
   useDisclosure,
   Button,
   Stack,
   useToast,
-  MenuButton,
-  MenuDivider,
-  Menu,
-  MenuList,
-  MenuItem,
 } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
-import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { CgProfile } from "react-icons/cg";
 import {
   MdLocalShipping,
@@ -58,7 +51,7 @@ const NavLink = ({ path, children }) => (
 );
 
 const Navbar = () => {
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const { isOpen } = useDisclosure();
   // const { colorMode, toggleColorMode } = useColorMode();
   // const [isHovering, setIsHovering] = useState(false);
   const user = useSelector((state) => state.user);
@@ -78,83 +71,43 @@ const Navbar = () => {
   return (
     <Box px={4} className="sticky" background="#0062be" color="#fff">
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <IconButton
-          size="xl"
-          background="#0062be"
-          color="#fff"
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-        />
-
-        <HStack>
-          {/* <Link
-            as={ReactLink}
-            to='/'
-            style={{ textDecoration: 'none' }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}>
-              
-            <Flex alignItems='center'>
-              
-              <Text fontWeight='extrabold'><span className="logo-name">D</span> yahrah</Text>
-            </Flex>
-          </Link> */}
-          <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
-            {links.map((link) => (
-              <NavLink key={link.linkName} path={link.path}>
-                {link.linkName}
-              </NavLink>
-            ))}
-          </HStack>
-        </HStack>
-        <Link as={ReactLink} to="/cart">
-          <ShoppingCartIcon />
-        </Link>
-        <Flex alignItems="center">
-          {/* <Icon
-            cursor='pointer'
-            mr='3'
-            as={colorMode === 'light' ? MoonIcon : SunIcon}
-            alignSelf='center'
-            onClick={() => toggleColorMode()}
-          /> */}
+        <input type="checkbox" name="" id="" className="check" />
+        <ul className="menu-items">
           {userInfo ? (
-            <Menu>
-              <MenuButton
-                px="4"
-                py="2"
-                color="#000"
-                transition="all 0.3s"
-                as={Button}
-              >
-                {userInfo.name} <ChevronDownIcon />
-              </MenuButton>
-              <MenuList color="#000">
-                <MenuItem as={ReactLink} to="/profile">
-                  <CgProfile />
-                  <Text ml="2">Profile</Text>
-                </MenuItem>
-                <MenuItem as={ReactLink} to="/your-orders">
-                  <MdLocalShipping />
-                  <Text ml="2">Your Orders</Text>
-                </MenuItem>
+            <div className="menu-logout">
+              <div className="side-navlist">
+              <div>
+                <li>hello, {userInfo.name}</li>
+              </div>
+                <li>
+                  <Link as={ReactLink} to="/profile">
+                    <CgProfile />
+                    <Text ml="2">Profile</Text>
+                  </Link>
+                </li>
+                <li>
+                  <Link as={ReactLink} to="/your-orders">
+                    <MdLocalShipping />
+                    <Text ml="2">Your Orders</Text>
+                  </Link>
+                </li>
+                <li>
                 {userInfo.isAdmin === "false" && (
-                  <>
-                    <MenuDivider />
-                    <MenuItem as={ReactLink} to={"/admin-console"}>
+                
+                    <Link as={ReactLink} to="/admin-console">
                       <MdOutlineAdminPanelSettings />
                       <Text ml="2">Admin Console</Text>
-                    </MenuItem>
-                  </>
+                    </Link> 
+                  
                 )}
-                <MenuDivider />
-                <MenuItem onClick={logoutHandler}>
+                  
+                </li>
+              </div>
+              <button className="button-logout" type="button" onClick={logoutHandler}>
                   <MdLogout />
-                  <Text ml="2">Logout</Text>
-                </MenuItem>
-              </MenuList>
-            </Menu>
+                  <Text ml="2">sign out</Text>
+                </button>
+            </div>
           ) : (
             <>
               <Button
@@ -182,7 +135,26 @@ const Navbar = () => {
               </Button>{" "}
             </>
           )}
-        </Flex>
+        </ul>
+
+        <div className="ham-menu">
+          <span className="line line1"></span>
+          <span className="line line2"></span>
+          <span className="line line3"></span>
+        </div>
+
+        <HStack>
+          <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
+            {links.map((link) => (
+              <NavLink key={link.linkName} path={link.path}>
+                {link.linkName}
+              </NavLink>
+            ))}
+          </HStack>
+        </HStack>
+        <Link as={ReactLink} to="/cart">
+          <ShoppingCartIcon />
+        </Link>
       </Flex>
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
