@@ -969,6 +969,7 @@ a:link {
   display: flex;
   border: 2px solid;
   justify-content: center;
+  padding: 0;
   width: 100vw !important;
   flex-wrap: wrap;
   margin: 20px 0;
