@@ -18,7 +18,7 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
-// import { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/userActions";
 
@@ -67,26 +67,31 @@ const Navbar = () => {
       isClosable: true,
     });
   };
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleUnClick = () => {
+    setIsVisible(!isVisible);
+  };
 
   return (
     <Box px={4} className="sticky" background="#0062be" color="#fff">
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <input type="checkbox" name="" id="" className="check" />
-        <ul className="menu-items">
+        { isVisible && (
+          <ul className="menu-items" >
           {userInfo ? (
             <div className="menu-logout">
               <div className="side-navlist">
-              <div>
+              {/* <div>
                 <li>hello, {userInfo.name}</li>
-              </div>
+              </div> */}
                 <li>
-                  <Link as={ReactLink} to="/profile">
+                  <Link as={ReactLink} onClick={handleUnClick} to="/profile">
                     <CgProfile />
                     <Text ml="2">Profile</Text>
                   </Link>
                 </li>
                 <li>
-                  <Link as={ReactLink} to="/your-orders">
+                  <Link as={ReactLink} onClick={handleUnClick} to="/your-orders">
                     <MdLocalShipping />
                     <Text ml="2">Your Orders</Text>
                   </Link>
@@ -94,7 +99,7 @@ const Navbar = () => {
                 <li>
                 {userInfo.isAdmin === "false" && (
                 
-                    <Link as={ReactLink} to="/admin-console">
+                    <Link as={ReactLink} onClick={handleUnClick} to="/admin-console">
                       <MdOutlineAdminPanelSettings />
                       <Text ml="2">Admin Console</Text>
                     </Link> 
@@ -136,8 +141,10 @@ const Navbar = () => {
             </>
           )}
         </ul>
+        )
 
-        <div className="ham-menu">
+        }
+        <div className={isVisible ? "ham-menu opened" : "ham-menu"} onClick={handleUnClick}>
           <span className="line line1"></span>
           <span className="line line2"></span>
           <span className="line line3"></span>

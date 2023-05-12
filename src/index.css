@@ -78,7 +78,9 @@ p {
 }
 
 /* hamburher button */
-
+.side-navlist {
+  width: 100%;
+}
 .side-navlist li a {
   display: flex;
   padding: 10px;
@@ -97,9 +99,8 @@ p {
   width: 90vw;
   height: 90vh;
   list-style: none;
-  display: none;
   z-index: 1;
-  font-size: 2rem;
+  font-size: 1.7rem;
   border: 4px solid white;
   background-color: white;
   border-radius: 0.25em;
@@ -108,8 +109,8 @@ p {
 }
 
 .menu-items li {
+  padding: 0 20px;
   color: black;
-  padding: 0.5rem;
 }
 
 .menu-items li a {
@@ -154,7 +155,7 @@ p {
   cursor: pointer;
 }
 
-.check:checked~.menu-items {
+.opened .menu-items {
   display: block;
   transform: translateX(0%);
 }
@@ -187,16 +188,16 @@ p {
   transition: transform 100ms ease-in-out;
 }
 
-.check:checked~.ham-menu .line1 {
+.opened .line1 {
   display: block;
   transform: rotate(45deg);
 }
 
-.check:checked~.ham-menu .line2 {
+.opened .line2 {
   opacity: 0;
 }
 
-.check:checked~.ham-menu .line3 {
+.opened .line3 {
   display: block;
   transform: rotate(-45deg);
 }
