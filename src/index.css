@@ -120,7 +120,7 @@ p {
 
 .logo {
   height: 40px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 .menu-items li a:hover {
@@ -635,6 +635,7 @@ a:link {
 
 .search-cont {
   max-width: 300px;
+  padding: 7px;
 }
 
 .blog-card {
