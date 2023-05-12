@@ -88,16 +88,13 @@ p {
   align-items: center;
 }
 
-.side-navlist li a p {
-  padding-left: 15px;
-}
-
 .menu-items {
   text-align: center;
   position: absolute;
-  margin-top: 95vh;
+  margin-top: 90vh;
+  padding: 0;
   width: 90vw;
-  height: 90vh;
+  height: 80vh;
   list-style: none;
   z-index: 1;
   font-size: 1.7rem;
