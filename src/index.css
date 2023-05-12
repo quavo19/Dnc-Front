@@ -82,7 +82,6 @@ p {
   width: 100%;
 }
 
-.button-logout,
 .side-navlist li a {
   display: flex;
   padding: 10px;
@@ -93,19 +92,19 @@ p {
 
 .menu-items {
   text-align: center;
-    position: absolute;
-    margin-top: 80vh;
-    margin-right: 0;
-    padding: 0;
-    width: 93vw;
-    height: 69vh;
-    list-style: none;
-    z-index: 1;
-    font-size: 1.7rem;
-    border: 4px solid white;
-    background-color: white;
-    border-radius: 0.25em;
-    transition: transform 100ms ease-in-out, opacity 200ms;
+  position: absolute;
+  margin-top: 80vh;
+  margin-right: 0;
+  padding: 0;
+  width: 93vw;
+  height: 69vh;
+  list-style: none;
+  z-index: 1;
+  font-size: 1.7rem;
+  border: 4px solid white;
+  background-color: white;
+  border-radius: 0.25em;
+  transition: transform 100ms ease-in-out, opacity 200ms;
 }
 
 .menu-items li {
@@ -129,23 +128,24 @@ p {
 
 .button-logout {
   color: black;
-    font-weight: 600;
-    font-size: 27px;
-    display: flex;
-    align-items: center;
-    width: 85%;
-    border-radius: 8px;
-    background: gainsboro;
-    justify-content: center;
-    max-width: 300px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  width: 85%;
+  border-radius: 8px;
+  background: gainsboro;
+  justify-content: center;
+  max-width: 300px;
 }
 
 .menu-logout {
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 97%;
-    align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 97%;
+  align-items: center;
 }
 
 .check {
