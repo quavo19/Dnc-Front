@@ -81,6 +81,8 @@ p {
 .side-navlist {
   width: 100%;
 }
+
+.button-logout,
 .side-navlist li a {
   display: flex;
   padding: 10px;
