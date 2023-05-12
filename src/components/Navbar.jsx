@@ -16,8 +16,7 @@ import {
   MdLogout,
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
-import { FiShoppingCart } from "react-icons/fi";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaShoppingBag } from "react-icons/fa";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/userActions";
@@ -33,7 +32,7 @@ const ShoppingCartIcon = () => {
       <Icon
         ml="1.5"
         color="#fff"
-        as={FiShoppingCart}
+        as={FaShoppingBag}
         h="7"
         w="7"
         alignSelf="center"
