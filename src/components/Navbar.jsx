@@ -52,11 +52,17 @@ const NavLink = ({ path, children }) => (
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
+  const [isVisible, setIsVisible] = useState(false);
+
+  
   const { userInfo } = user;
   const dispatch = useDispatch();
   const toast = useToast();
-
+  const handleUnClick = () => {
+    setIsVisible(!isVisible);
+  };
   const logoutHandler = () => {
+    handleUnClick()
     dispatch(logout());
     toast({
       description: "You have been logged out.",
@@ -64,11 +70,7 @@ const Navbar = () => {
       isClosable: true,
     });
   };
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleUnClick = () => {
-    setIsVisible(!isVisible);
-  };
+  
 
   return (
     <Box px={4} className="sticky" background="#0062be" color="#fff">
@@ -120,27 +122,28 @@ const Navbar = () => {
           ) : (
             <>
               <Button
+              
                 as={ReactLink}
                 to="/login"
                 p={2}
                 fontSize="sm"
-                fontWeight={400}
-                variant="link"
+                fontWeight={600}
+              variant="link"  
+                onClick={handleUnClick} 
               >
-                Sign In
+                <button type='button' className="btn btn-primary">sign in</button>
               </Button>
               <Button
                 as={ReactLink}
                 to="/registration"
                 m={2}
-                display={{ base: "none", md: "inline-flex" }}
                 fontSize="sm"
                 fontWeight={600}
-                _hover={{ bg: "orange.400" }}
-                bg="orange.500"
-                color="white"
+                variant="link"  
+                onClick={handleUnClick} 
+                
               >
-                Sign Up
+                <button type='button' className="btn btn-dark">sign up</button>
               </Button>{" "}
             </>
           )}

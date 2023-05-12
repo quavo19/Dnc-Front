@@ -84,29 +84,30 @@ p {
 .side-navlist li a {
   display: flex;
   padding: 10px;
+  font-size: 20px;
   font-weight: 600;
   align-items: center;
 }
 
 .menu-items {
   text-align: center;
-  position: absolute;
-  margin-top: 90vh;
-  padding: 0;
-  width: 90vw;
-  height: 80vh;
-  list-style: none;
-  z-index: 1;
-  font-size: 1.7rem;
-  border: 4px solid white;
-  background-color: white;
-  border-radius: 0.25em;
-  transform: translateX(-10%);
-  transition: transform 100ms ease-in-out, opacity 200ms;
+    position: absolute;
+    margin-top: 80vh;
+    margin-right: 0;
+    padding: 0;
+    width: 93vw;
+    height: 69vh;
+    list-style: none;
+    z-index: 1;
+    font-size: 1.7rem;
+    border: 4px solid white;
+    background-color: white;
+    border-radius: 0.25em;
+    transition: transform 100ms ease-in-out, opacity 200ms;
 }
 
 .menu-items li {
-  padding: 0 20px;
+  padding: 15px 20px;
   color: black;
 }
 
