@@ -5,9 +5,8 @@ import {
   Link,
   Icon,
   Text,
-  useDisclosure,
   Button,
-  Stack,
+  Image,
   useToast,
 } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
@@ -18,6 +17,7 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
+import { FaHome } from "react-icons/fa";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/userActions";
@@ -51,9 +51,6 @@ const NavLink = ({ path, children }) => (
 );
 
 const Navbar = () => {
-  const { isOpen } = useDisclosure();
-  // const { colorMode, toggleColorMode } = useColorMode();
-  // const [isHovering, setIsHovering] = useState(false);
   const user = useSelector((state) => state.user);
   const { userInfo } = user;
   const dispatch = useDispatch();
@@ -84,6 +81,7 @@ const Navbar = () => {
               {/* <div>
                 <li>hello, {userInfo.name}</li>
               </div> */}
+              
                 <li>
                   <Link as={ReactLink} onClick={handleUnClick} to="/profile">
                     <CgProfile />
@@ -106,6 +104,12 @@ const Navbar = () => {
                   
                 )}
                   
+                </li>
+                <li>
+                  <Link as={ReactLink} onClick={handleUnClick} to="/">
+                  <FaHome/>
+                    <Text ml="2">Home</Text>
+                  </Link>
                 </li>
               </div>
               <button className="button-logout" type="button" onClick={logoutHandler}>
@@ -159,24 +163,14 @@ const Navbar = () => {
             ))}
           </HStack>
         </HStack>
+        <Link as={ReactLink} to='/'>
+        <Image className="logo" src="images/logo.jpg"/>
+        </Link>
+        
         <Link as={ReactLink} to="/cart">
           <ShoppingCartIcon />
         </Link>
       </Flex>
-      {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
-          <Stack as="nav" spacing={4}>
-            {links.map((link) => (
-              <NavLink key={link.linkName} path={link.path}>
-                {link.linkName}
-              </NavLink>
-            ))}
-            <NavLink key="sign up" path="/registration">
-              Sign Up
-            </NavLink>
-          </Stack>
-        </Box>
-      ) : null}
     </Box>
   );
 };

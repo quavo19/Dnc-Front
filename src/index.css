@@ -118,6 +118,11 @@ p {
   text-decoration: none;
 }
 
+.logo {
+  height: 50px;
+  border-radius: 8px;
+}
+
 .menu-items li a:hover {
   color: rgb(174, 174, 174);
 }
