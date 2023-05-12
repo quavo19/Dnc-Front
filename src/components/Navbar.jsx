@@ -52,8 +52,6 @@ const NavLink = ({ path, children }) => (
 const Navbar = () => {
   const user = useSelector((state) => state.user);
   const [isVisible, setIsVisible] = useState(false);
-
-  
   const { userInfo } = user;
   const dispatch = useDispatch();
   const toast = useToast();
@@ -176,5 +174,4 @@ const Navbar = () => {
     </Box>
   );
 };
-
 export default Navbar;

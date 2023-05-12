@@ -1149,10 +1149,11 @@ a:link {
 }
 
 .product-item a img {
-  width: 100%;
-  height: 130px;
+  height: 100%;
   max-height: 200px;
   padding: 0;
+  object-fit: scale-down;
+  width: 100%;
 }
 
 .css-iml1r9 {
